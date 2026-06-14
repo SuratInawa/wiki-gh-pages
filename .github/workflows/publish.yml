@@ -5,31 +5,41 @@ on:
   push:
     branches:
       - main
-      # - source
-      # It is highly recommended that you only run this action on push to a 
-        # specific branch, eg. master or source (if on *.github.io repo)
-    
+
+permissions:
+  contents: write
+
 jobs:
   build-static-tw-publish:
     runs-on: ubuntu-latest
+
+    env:
+      SITE_URL: "https://inawa.youronly.one"
+      SITE_NAME: "수랕 이나와 (Surat Inawa) | a Filipino adaption of Sejonggeul"
+
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3.5.1
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
 
-      - name: Build Static Pages 🛠
-        run: | 
-             chmod +x $GITHUB_WORKSPACE/build.sh
-             ./build.sh
+      - name: Build Static Pages
+        run: |
+          chmod +x $GITHUB_WORKSPACE/build.sh
+          ./build.sh
 
-      - name: add a nojekyll file 🚫
-        run: touch $GITHUB_WORKSPACE/static/.nojekyll
-      
-      - name: Deploy to GH Pages 🚀
+      - name: Post-process tiddler pages
+        run: node post-process.js
+
+      - name: Add a nojekyll file
+        run: touch $GITHUB_WORKSPACE/dist/.nojekyll
+
+      - name: Deploy to GH Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: static 
+          folder: dist
           clean: true
