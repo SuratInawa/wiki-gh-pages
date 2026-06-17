@@ -9,6 +9,11 @@ mkdir -p dist/static
 # Copy the live wiki to dist root so it is served at /
 cp index.html dist/index.html
 
+# REQUIREMENT A: Copy all files from the root folder to the dist deployment root
+if [ -d "./root" ]; then
+  cp -r ./root/* ./dist/
+fi
+
 # Unpack single file wiki into wiki folder
 node node_modules/tiddlywiki/tiddlywiki.js --load index.html --savewikifolder ./wiki
 
