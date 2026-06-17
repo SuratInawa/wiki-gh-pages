@@ -14,20 +14,17 @@ if (!SITE_URL) {
 }
 
 const SKIP = new Set(["index.html", "static.css"]);
+const sitemapEntries = []; // Container for Requirement B
 
 // Helper to decode links and convert characters to match our clean filename slug structure
 function sanitizeHtmlLinks(htmlContent) {
-  // Regex matches any href="something.html" link pattern
   return htmlContent.replace(/href="([^"]+\.html)"/g, (match, encodedLink) => {
-    // Ignore links that point to external web domains or subdirectories
     if (encodedLink.startsWith("http://") || encodedLink.startsWith("https://") || encodedLink.startsWith("/")) {
       return match;
     }
     try {
       let decoded = decodeURIComponent(encodedLink);
       
-      // Explicit manual chain covering illegal characters across Windows, Mac, Linux, and Web URLs
-      // Percent signs (%) are intentionally left out here so multi-language scripts decode flawlessly
       let cleanLink = decoded
         .replace(/:/g, "-")
         .replace(/\//g, "-")
@@ -44,7 +41,7 @@ function sanitizeHtmlLinks(htmlContent) {
         
       return `href="${cleanLink}"`;
     } catch (e) {
-      return match; // Fallback if decoding the link fails
+      return match;
     }
   });
 }
@@ -54,8 +51,6 @@ const files = fs.readdirSync(staticDir)
 
 for (const file of files) {
   const oldPath = path.join(staticDir, file);
-  
-  // Normalize filenames to NFC formatting for strict GitHub Pages lookups
   const normalizedFile = file.normalize("NFC");
   const filePath = path.join(staticDir, normalizedFile);
   
@@ -64,8 +59,6 @@ for (const file of files) {
   }
 
   let html = fs.readFileSync(filePath, "utf8");
-
-  // Fix internal links inside this specific tiddler file body content
   html = sanitizeHtmlLinks(html);
 
   const tiddlerTitle = normalizedFile.replace(/\.html$/, "").replace(/-/g, " ");
@@ -79,9 +72,18 @@ for (const file of files) {
 
   fs.writeFileSync(filePath, html, "utf8");
   console.log(`Processed: ${tiddlerTitle}`);
+
+  // REQUIREMENT B: Collect metrics for individual static tiddler pages
+  const stat = fs.statSync(filePath);
+  sitemapEntries.push(`  <url>
+    <loc>${SITE_URL}/static/${encodeURIComponent(normalizedFile)}</loc>
+    <lastmod>${stat.mtime.toISOString()}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>`);
 }
 
-// Process the main index page links last using the same logic
+// Process the main index page links last
 if (fs.existsSync(indexPage)) {
   let indexHtml = fs.readFileSync(indexPage, "utf8");
   indexHtml = sanitizeHtmlLinks(indexHtml);
@@ -93,14 +95,43 @@ if (fs.existsSync(indexPage)) {
     if (indexHtml.match(/<body[^>]*>/)) {
       indexHtml = indexHtml.replace(/(<body[^>]*>)/, `$1\n${indexBanner}`);
     } else {
-      // Wrap in a layout-safe div block so mobile and web browsers render it cleanly at the top
       indexHtml = `<div style="font-family:sans-serif;">${indexBanner}</div>\n` + indexHtml;
     }
   }
 
   fs.writeFileSync(indexPage, indexHtml, "utf8");
   console.log("Successfully decoded and matched all static/index.html navigation links.");
+
+  // REQUIREMENT B: Add static index page to sitemap tracking
+  const indexStat = fs.statSync(indexPage);
+  sitemapEntries.unshift(`  <url>
+    <loc>${SITE_URL}/static/index.html</loc>
+    <lastmod>${indexStat.mtime.toISOString()}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>`);
 }
 
+// REQUIREMENT B: Track core home/landing page
+const rootIndex = path.join(__dirname, "dist", "index.html");
+if (fs.existsSync(rootIndex)) {
+  const rootStat = fs.statSync(rootIndex);
+  sitemapEntries.unshift(`  <url>
+    <loc>${SITE_URL}/</loc>
+    <lastmod>${rootStat.mtime.toISOString()}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>`);
+}
+
+// REQUIREMENT B: Compile and save sitemap.xml to the dist folder root
+const sitemapPath = path.join(__dirname, "dist", "sitemap.xml");
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://sitemaps.org">
+${sitemapEntries.join("\n")}
+</urlset>`;
+
+fs.writeFileSync(sitemapPath, sitemapXml, "utf8");
+console.log("Successfully generated sitemap.xml at deployment root.");
+
 console.log(`\nDone. All operations completed successfully.`);
-    
