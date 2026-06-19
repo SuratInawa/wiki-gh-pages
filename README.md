@@ -10,9 +10,10 @@ The name <span lang="fil-Hang">수랕 이나와</span> (<span lang="fil">Surat I
 
 ## 🪢 Official links
 
-- Main: [inawa.youronly.one](https://inawa.youronly.one)
-- Static: [inawa.youronly.one/static](https://inawa.youronly.one/static/)
-- Backup: [inawa.tiddlyhost.com](https://inawa.tiddlyhost.com)
+- Main: [Main Wiki](https://inawa.youronly.one)
+- Static: [Static Wiki](https://inawa.youronly.one/static/)
+- Blog: [Surat Inawa Blog](https://surat.youronly.one)
+- Backup: [Backup Wiki](https://inawa.tiddlyhost.com)
 
 ## 📋 Features
 
