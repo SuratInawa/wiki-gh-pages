@@ -1269,15 +1269,7 @@ a.tc-tiddlylink:hover {
 		min-height: 32px;
 		margin-top: 17px;
 		transition:  min-height 400ms ease-in-out, padding-top 400ms ease-in-out, padding-bottom 400ms ease-in-out;
-	}
-
-		.tc-sidebar-header {
-			min-height: 0;
-			padding-top: 0;
-			padding-bottom: 0;
-		}
-
-	.tc-story-river {
+	}.tc-story-river {
 		position: relative;
 		padding: 0;
 	}
@@ -1308,13 +1300,7 @@ a.tc-tiddlylink:hover {
 		top: 17px;
 		width: 770px;
 		padding: 42px 42px 42px 42px;
-	}
-
-	.tc-story-river {
-		width: calc(100% - 0px);
-	}
-
-.tc-story-river.tc-static-story-river {
+	}.tc-story-river.tc-static-story-river {
 		margin-right: 0;
 		padding-right: 42px;
 	}}@media print {body.tc-body {
@@ -1890,13 +1876,7 @@ z-index: 100;
 		padding: 28px 42px 42px 42px;
 		width: 686px;
 		border-radius: 2px;
-	}
-
-	.tc-tiddler-frame {
-		width: 100%;
-	}
-
-.tc-tiddler-info {
+	}.tc-tiddler-info {
 		margin: 0 -42px 0 -42px;
 	}
 }.tc-site-title,
@@ -2104,12 +2084,6 @@ z-index: 100;
 	}body.tc-body .tc-page-container.tc-page-view-zoomin .tc-tiddler-frame {
 		width: 100%;
 		width: calc(100% - 42px);
-	}.tc-story-river {
-		padding-right: 3em;
-		margin-right: 0;
-	}body.tc-body .tc-page-container.tc-page-view-zoomin .tc-tiddler-frame {
-		width: 100%;
-		width: calc(100% - 84px);
 	}}/*
 ** Toolbar buttons
 */.tc-page-controls svg.tc-image-new-button {
@@ -8141,10 +8115,7 @@ fixes long url overflows in table
   border: 1.5px solid var(--scrollbarBG);
   background-color: var(--thumbBG) ;
 }/* create story river in two column layout */
-.tc-topbar-right{
-		background-color:#5FC1E2;
-		border-radius: 1.5em;
-}/*This fix is used to prevent hidden scrolling contents in vertical tabs like tagcloud in the sidebar*/
+/*This fix is used to prevent hidden scrolling contents in vertical tabs like tagcloud in the sidebar*/
 .tc-sidebar-tabs-main .tc-tab-content.tc-vertical {
 	display: inline-block;
 	vertical-align: top;
