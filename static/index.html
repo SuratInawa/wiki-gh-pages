@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.4.0" />
+<meta name="tiddlywiki-version" content="5.4.1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -8725,48 +8725,53 @@ span.markdown {
   /** END: FONT-SIZE VARS **/
 
   /** BGN: FONT-FAMILY VARS **/
-    --font-latn-sans-noto: 'Noto Sans';
-    --font-latn-serif-noto: 'Noto Serif';
-    --font-latn-mono-noto: 'Noto Sans Mono', 'Noto Mono';
+    --font-latn-sans-noto: 'Noto Sans Variable', 'Noto Sans';
+    --font-latn-serif-noto: 'Noto Serif Variable', 'Noto Serif';
+    --font-latn-mono-noto: 'Noto Sans Mono Variable', 'Noto Sans Mono', 'Noto Mono';
 
-    --font-latn-sans-roboto: 'Roboto';
-    --font-latn-serif-roboto: 'Roboto Serif';
-    --font-latn-mono-roboto: 'Roboto Mono';
+    --font-latn-sans-roboto: 'Roboto Variable', 'Roboto';
+    --font-latn-serif-roboto: 'Roboto Serif Variable', 'Roboto Serif';
+    --font-latn-mono-roboto: 'Roboto Mono Variable', 'Roboto Mono';
 
     --font-kana-sans-mplus: 'M PLUS Rounded 1c';
+    --font-kana-sans-mplus2: 'M PLUS 2 Variable', 'M PLUS 2';
     --font-kana-serif-zen: 'Zen Old Mincho';
-    --font-kana-mono-mplus: 'M PLUS 1 Code';
+    --font-kana-serif-shippori-mincho: 'Shippori Mincho';
+    --font-kana-mono-mplus: 'M PLUS 1 Code Variable', 'M PLUS 1 Code';
 
     --font-jamo-sans-nanum: 'Nanum Gothic';
     --font-jamo-sans-gothic-a1: 'Gothic A1';
+    --font-jamo-sans-pretendard: 'Pretendard Variable', 'Pretendard';
     --font-jamo-serif-nanum: 'Nanum Myeongjo';
+    --font-jamo-serif-maru-buri: '마루 부리OTF', 'MaruBuriOTF', '마루부리OTF', 'Maru BuriOTF', '마루부리 OTF', 'MaruBuri OTF', '마루 부리 OTF', 'Maru Buri OTF', '마루 부리', 'MaruBuri', '마루부리', 'Maru Buri';
     --font-jamo-mono-nanum: 'Nanum Gothic Coding';
+    --font-jamo-mono-d2coding: 'D2Coding';
 
     --font-latn-fantasy-barabara: 'barabara';
 
     /** HANZI **/
-    --font-hans-sans: 'Roboto', 'Noto Sans SC', 'Noto Sans CJK SC', 'Noto Sans';
-    --font-hant-sans: 'Roboto', 'Noto Sans TC', 'Noto Sans CJK TC', 'Noto Sans';
-    --font-hk-sans: 'Roboto', 'Noto Sans HK', 'Noto Sans CJK HK', 'Noto Sans';
-    --font-bopo-sans: 'Roboto', 'Noto Sans TC', 'Noto Sans CJK TC', 'Noto Sans';
-    --font-hans-sans-noto-fangsong-rotated: 'Roboto', 'Noto Fangsong KSS Rotated', 'Noto Sans';
-    --font-hans-sans-noto-fangsong-vertical: 'Roboto', 'Noto Fangsong KSS Vertical', 'Noto Sans';
+    --font-hans-sans: 'Noto Sans SC Variable', 'Noto Sans SC', 'Roboto Variable', 'Roboto', 'Noto Sans Variable', 'Noto Sans';
+    --font-hant-sans: 'Noto Sans TC Variable', 'Noto Sans TC', 'Roboto Variable', 'Roboto', 'Noto Sans Variable', 'Noto Sans';
+    --font-hk-sans: 'Noto Sans HK Variable', 'Noto Sans HK', 'Roboto Variable', 'Roboto', 'Noto Sans Variable', 'Noto Sans';
+    --font-bopo-sans: 'Noto Sans TC Variable', 'Noto Sans TC', 'Roboto Variable', 'Roboto', 'Noto Sans Variable', 'Noto Sans';
+    --font-hans-sans-noto-fangsong-rotated: 'Noto Fangsong KSS Rotated';
+    --font-hans-sans-noto-fangsong-vertical: 'Noto Fangsong KSS Vertical';
 
     /** KANA **/
-    --font-kana-sans: 'Roboto', 'M PLUS Rounded 1c', 'Noto Sans JP', 'Noto Sans CJK JP', 'Noto Sans';
-    --font-kana-serif: 'Roboto Serif', 'Zen Old Mincho', 'Noto Serif JP', 'Noto Serif CJK JP', 'Noto Serif';
-    --font-kana-mono: 'Roboto Mono', 'M PLUS 1 Code', 'Noto Sans Mono', 'Noto Mono';
+    --font-kana-sans: 'M PLUS 2 Variable', 'M PLUS 2', 'M PLUS Rounded 1c', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Segoe UI', 'Roboto Variable', 'Roboto', 'Noto Sans JP Variable', 'Noto Sans JP', 'Noto Sans Variable', 'Noto Sans';
+    --font-kana-serif: 'Shippori Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', 'MS Mincho', 'Georgia', 'Times New Roman', 'Roboto Serif Variable', 'Roboto Serif', 'Noto Serif JP Variable', 'Noto Serif JP', 'Noto Serif Variable', 'Noto Serif';
+    --font-kana-mono: 'M PLUS 1 Code Variable', 'M PLUS 1 Code', 'SF Mono', 'Cascadia Code', 'Segoe UI Mono', 'Roboto Mono Variable', 'Roboto Mono', 'DejaVu Sans Mono', 'Noto Sans Mono Variable', 'Noto Sans Mono', 'Noto Mono';
 
     /** SEJONGGEUL **/
-    --font-jamo-sans: 'Roboto', 'Gothic A1', 'Noto Sans KR', 'Noto Sans CJK KR', 'Noto Sans';
-    --font-jamo-serif: 'Roboto Serif', 'Nanum Myeongjo', 'Noto Serif KR', 'Noto Serif CJK KR', 'Noto Serif';
-    --font-jamo-mono: 'Roboto Mono', 'Nanum Gothic Coding', 'Noto Sans Mono', 'Noto Mono';
+    --font-jamo-sans: 'Pretendard Variable', 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Segoe UI', 'Roboto Variable', 'Roboto', 'Noto Sans KR Variable', 'Noto Sans KR', 'Noto Sans Variable', 'Noto Sans';
+    --font-jamo-serif: '마루 부리OTF', 'MaruBuriOTF', '마루부리OTF', 'Maru BuriOTF', '마루부리 OTF', 'MaruBuri OTF', '마루 부리 OTF', 'Maru Buri OTF', '마루 부리', 'MaruBuri', '마루부리', 'Maru Buri', 'Hiragino Mincho ProN', 'Chosunilbo Myungjo', 'Batang', 'New York', 'Georgia', 'Times New Roman', 'Roboto Serif Variable', 'Roboto Serif', 'Noto Serif KR Variable', 'Noto Serif KR', 'Noto Serif Variable', 'Noto Serif';
+    --font-jamo-mono: 'D2Coding', 'SF Mono', 'Cascadia Code', 'Segoe UI Mono', 'Roboto Mono Variable', 'Roboto Mono', 'DejaVu Sans Mono', 'Noto Sans Mono Variable', 'Noto Sans Mono', 'Noto Mono';
 
     /** HEBREW **/
-    --font-hebr-sans: 'Roboto', 'phoenician-sans-noto', 'Noto Sans Phoenician', 'hebrew-sans-noto', 'Noto Sans Hebrew', 'Noto Sans'; /** NOTE: Different Unicode blocks **/
-    --font-hebr-serif: 'Roboto Serif', 'hebrew-serif-noto', 'Noto Serif Hebrew', 'Noto Serif';
-    --font-hebr-sans-paleo-gezer: 'Roboto', 'hebrew-sans-paleo-gezer', 'Noto Sans';
-    --font-hebr-sans-proto-canaanite: 'Roboto', 'hebrew-sans-proto-canaanite', 'Noto Sans';
+    --font-hebr-sans: 'phoenician-sans-noto', 'Noto Sans Phoenician', 'hebrew-sans-noto', 'Noto Sans Hebrew', 'Roboto Variable', 'Roboto', 'Noto Sans Variable', 'Noto Sans'; /** NOTE: Different Unicode blocks **/
+    --font-hebr-serif: 'hebrew-serif-noto', 'Noto Serif Hebrew', 'Roboto Serif Variable', 'Roboto Serif', 'Noto Serif Variable', 'Noto Serif';
+    --font-hebr-sans-paleo-gezer: 'hebrew-sans-paleo-gezer', 'Roboto Variable', 'Roboto', 'Noto Sans Variable', 'Noto Sans';
+    --font-hebr-sans-proto-canaanite: 'hebrew-sans-proto-canaanite', 'Roboto Variable', 'Roboto', 'Noto Sans Variable', 'Noto Sans';
 
     /** GREEK **/
     /*
@@ -8775,13 +8780,14 @@ span.markdown {
     */
 
     /** FILIPINO **/
-    --font-filipino-sans: 'Roboto', 'Gothic A1', 'M PLUS Rounded 1c', 'Noto Sans KR', 'Noto Sans JP', 'Noto Sans CJK KR', 'Noto Sans CJK JP', 'baybayin-noto', 'Noto Sans Tagalog', 'Noto Sans Hanunoo', 'Noto Sans Buhid', 'Noto Sans Tagbanwa', 'Noto Sans'; /** NOTE: Different Unicode blocks for Baybayin **/
+    --font-filipino-sans: 'Pretendard Variable', 'Pretendard', 'M PLUS 2 Variable', 'M PLUS 2', 'M PLUS Rounded 1c', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Segoe UI', 'Noto Sans KR Variable', 'Noto Sans KR', 'Noto Sans JP Variable', 'Noto Sans JP', 'baybayin-noto', 'Noto Sans Tagalog', 'Noto Sans Hanunoo', 'Noto Sans Buhid', 'Noto Sans Tagbanwa', 'Roboto Variable', 'Roboto', 'Noto Sans Variable', 'Noto Sans'; /** NOTE: Different Unicode blocks for Baybayin **/
+
     --font-baybayin-noto: 'baybayin-noto', 'Noto Sans Tagalog', 'Noto Sans Hanunoo', 'Noto Sans Buhid', 'Noto Sans Tagbanwa'; /** NOTE: Different Unicode blocks **/
     --font-baybayin-nordenx: 'baybayin-nordenx'; /** NOTE: subset font **/
 
     /** MISC **/
-    --font-math-sans: 'Roboto', 'noto-sans-math', 'Noto Sans Math', 'noto-sans-symbols2', 'Noto Sans Symbols 2', 'noto-sans-symbols', 'Noto Sans Symbols', 'Noto Sans';
-    --font-music: 'Roboto', 'noto-music', 'Noto Music', 'noto-sans-symbols2', 'Noto Sans Symbols 2', 'noto-sans-symbols', 'Noto Sans Symbols', 'Noto Sans';
+    --font-math-sans: 'noto-sans-math', 'Noto Sans Math', 'noto-sans-symbols2', 'Noto Sans Symbols 2', 'noto-sans-symbols', 'Noto Sans Symbols', 'Roboto Variable', 'Roboto', 'Noto Sans Variable', 'Noto Sans';
+    --font-music: 'noto-music', 'Noto Music', 'noto-sans-symbols2', 'Noto Sans Symbols 2', 'noto-sans-symbols', 'Noto Sans Symbols', 'Roboto Variable', 'Roboto', 'Noto Sans Variable', 'Noto Sans';
 
     /** EMOJI **/
     --font-emoji-fallback: 'Apple Color Emoji', 'Segoe UI Emoji', 'noto-sans-symbols2', 'Noto Sans Symbols 2', 'noto-sans-symbols', 'Noto Sans Symbols';
@@ -8970,7 +8976,7 @@ body {
         font-size-adjust: var(--font-size-adjust-hanzi);
         font-style: normal; /** NOTE: remove italics **/
         font-synthesis: weight; /** NOTE: only bold **/
-        font-variant-east-asian: full-width;
+        font-variant-east-asian: proportional-width;
         letter-spacing: var(--letter-spacing-hanzi);
         line-height: var(--line-height-hanzi);
       }
@@ -8992,7 +8998,7 @@ body {
         font-size-adjust: var(--font-size-adjust-hanzi);
         font-style: normal; /** NOTE: remove italics **/
         font-synthesis: weight; /** NOTE: only bold **/
-        font-variant-east-asian: full-width;
+        font-variant-east-asian: proportional-width;
         letter-spacing: var(--letter-spacing-hanzi);
         line-height: var(--line-height-hanzi);
       }
@@ -9007,11 +9013,11 @@ body {
 
   :where(:lang(zh-Hans)) {
     font-language-override: 'ZHS';
-    font-variant-east-asian: simplified full-width;
+    font-variant-east-asian: simplified proportional-width;
   }
   :where(:lang(zh-Hant)) {
     font-language-override: 'ZHT';
-    font-variant-east-asian: traditional full-width;
+    font-variant-east-asian: traditional proportional-width;
   }
   :where(:lang(zh-Hant-HK)) {
     font-language-override: 'ZHH';
@@ -9031,7 +9037,7 @@ body {
     font-size-adjust: var(--font-size-adjust-kana);
     font-style: normal; /** NOTE: remove italics **/
     font-synthesis: weight; /** NOTE: only bold **/
-    font-variant-east-asian: jis04 full-width;
+    font-variant-east-asian: jis04 proportional-width;
     letter-spacing: var(--letter-spacing-kana);
     line-height: var(--line-height-kana);
   }
@@ -9057,7 +9063,7 @@ body {
     font-size-adjust: var(--font-size-adjust-jamo);
     font-style: normal; /** NOTE: remove italics **/
     font-synthesis: weight; /** NOTE: only bold **/
-    font-variant-east-asian: full-width;
+    font-variant-east-asian: proportional-width;
     letter-spacing: var(--letter-spacing-jamo);
     line-height: var(--line-height-jamo);
   }
@@ -9198,7 +9204,7 @@ body {
           font-size-adjust: var(--font-size-adjust-latin);
           font-style: normal; /** NOTE: remove italics **/
           font-synthesis: revert;
-          font-variant-east-asian: full-width;
+          font-variant-east-asian: proportional-width;
           letter-spacing: var(--letter-spacing-latin);
           line-height: var(--line-height-latin);
         }
@@ -9221,7 +9227,7 @@ body {
           font-size-adjust: var(--font-size-adjust-latin);
           font-style: normal; /** NOTE: remove italics **/
           font-synthesis: revert;
-          font-variant-east-asian: full-width;
+          font-variant-east-asian: proportional-width;
           letter-spacing: var(--letter-spacing-latin);
           line-height: var(--line-height-latin);
         }
@@ -9341,7 +9347,7 @@ body {
         font-size-adjust: var(--font-size-adjust-jamo);
         font-style: normal; /** NOTE: remove italics **/
         font-synthesis: weight; /** NOTE: only bold **/
-        font-variant-east-asian: full-width;
+        font-variant-east-asian: proportional-width;
         letter-spacing: var(--letter-spacing-jamo);
         line-height: var(--line-height-jamo);
       }
@@ -9357,7 +9363,7 @@ body {
         font-size-adjust: var(--font-size-adjust-jamo);
         font-style: normal; /** NOTE: remove italics **/
         font-synthesis: weight; /** NOTE: only bold **/
-        font-variant-east-asian: full-width;
+        font-variant-east-asian: proportional-width;
         letter-spacing: var(--letter-spacing-jamo);
         line-height: var(--line-height-jamo);
       }
@@ -9377,7 +9383,7 @@ body {
         font-size-adjust: var(--font-size-adjust-jamo);
         font-style: normal; /** NOTE: remove italics **/
         font-synthesis: weight; /** NOTE: only bold **/
-        font-variant-east-asian: full-width;
+        font-variant-east-asian: proportional-width;
         letter-spacing: var(--letter-spacing-jamo);
         line-height: var(--line-height-jamo);
       }
@@ -9393,7 +9399,7 @@ body {
         font-size-adjust: var(--font-size-adjust-jamo);
         font-style: normal; /** NOTE: remove italics **/
         font-synthesis: weight; /** NOTE: only bold **/
-        font-variant-east-asian: full-width;
+        font-variant-east-asian: proportional-width;
         letter-spacing: var(--letter-spacing-jamo);
         line-height: var(--line-height-jamo);
       }
@@ -10860,11 +10866,11 @@ music {
 
 :root {
   /** BGN: FONT VARS **/
-    --font-sans-default: var(--font-latn-sans-roboto), var(--font-jamo-sans-gothic-a1), var(--font-kana-sans-mplus), var(--font-baybayin-noto), sans-serif;
-    --font-serif-default: var(--font-latn-serif-roboto), var(--font-jamo-serif-nanum), var(--font-kana-serif-zen), var(--font-baybayin-nordenx), serif;
-    --font-mono-default: var(--font-latn-mono-roboto), var(--font-jamo-mono-nanum), var(--font-kana-mono-mplus), var(--font-baybayin-noto), monospace;
+    --font-sans-default: var(--font-jamo-sans-pretendard), var(--font-kana-sans-mplus2), var(--font-baybayin-noto), var(--font-latn-sans-roboto), var(--font-latn-sans-noto), sans-serif;
+    --font-serif-default: var(--font-jamo-serif-maru-buri), var(--font-kana-serif-shippori-mincho), var(--font-baybayin-nordenx), var(--font-latn-serif-roboto), var(--font-latn-serif-noto), serif;
+    --font-mono-default: var(--font-jamo-mono-d2coding), var(--font-kana-mono-mplus), var(--font-baybayin-noto), var(--font-latn-mono-roboto), var(--font-latn-mono-noto), monospace;
 
-    --font-latn-sans-default: var(--font-latn-sans-roboto), sans-serif;
+    --font-latn-sans-default: var(--font-latn-sans-roboto), var(--font-latn-sans-noto), sans-serif;
     --font-latn-fantasy-default: var(--font-latn-fantasy-barabara), fantasy;
 
     --font-hans-sans-default: var(--font-hans-sans), sans-serif;
